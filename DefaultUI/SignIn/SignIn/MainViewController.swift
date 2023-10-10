@@ -7,4 +7,11 @@
 
 import UIKit
 
-final class MainViewController: UIViewController {}
+final class MainViewController: UIViewController {
+    
+    @IBOutlet weak var identifierTextField: UITextField!
+    @IBOutlet weak var identifierCautionLabel: UILabel!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordCautionLabel: UILabel!
+    @IBOutlet weak var signInButton: UIButton!
+}
