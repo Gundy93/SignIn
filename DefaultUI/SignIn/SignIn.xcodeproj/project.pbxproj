@@ -15,6 +15,7 @@
 		BF6261402AD5ABD8006FB50C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF62613E2AD5ABD8006FB50C /* LaunchScreen.storyboard */; };
 		BF6261482AD5B3F6006FB50C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6261472AD5B3F5006FB50C /* SignInViewController.swift */; };
 		BF62614A2AD5B42A006FB50C /* SingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6261492AD5B42A006FB50C /* SingUpViewController.swift */; };
+		BF6261512AD6727D006FB50C /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6261502AD6727D006FB50C /* AccountManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		BF6261412AD5ABD8006FB50C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF6261472AD5B3F5006FB50C /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		BF6261492AD5B42A006FB50C /* SingUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewController.swift; sourceTree = "<group>"; };
+		BF6261502AD6727D006FB50C /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				BF6261372AD5ABD7006FB50C /* MainViewController.swift */,
 				BF6261472AD5B3F5006FB50C /* SignInViewController.swift */,
 				BF6261492AD5B42A006FB50C /* SingUpViewController.swift */,
+				BF6261502AD6727D006FB50C /* AccountManager.swift */,
 				BF6261392AD5ABD7006FB50C /* Main.storyboard */,
 				BF62613C2AD5ABD8006FB50C /* Assets.xcassets */,
 				BF62613E2AD5ABD8006FB50C /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 				BF62614A2AD5B42A006FB50C /* SingUpViewController.swift in Sources */,
 				BF6261342AD5ABD7006FB50C /* AppDelegate.swift in Sources */,
 				BF6261362AD5ABD7006FB50C /* SceneDelegate.swift in Sources */,
+				BF6261512AD6727D006FB50C /* AccountManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
