@@ -33,7 +33,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="identifierChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="R2v-Oz-sf5"/>
+                                                    <action selector="identifierChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="NwM-tu-RbZ"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
@@ -58,7 +58,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="passwordChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Jse-gD-NJj"/>
+                                                    <action selector="passwordChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="MlW-po-vJO"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
@@ -178,7 +178,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="identifierChanged:" destination="u8Q-Vz-V1i" eventType="editingDidEnd" id="LRj-2x-yBa"/>
+                                                    <action selector="identifierChanged:" destination="u8Q-Vz-V1i" eventType="editingChanged" id="1qe-FA-mvF"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
@@ -203,7 +203,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="passwordChanged:" destination="u8Q-Vz-V1i" eventType="editingDidEnd" id="bJL-jg-ngF"/>
+                                                    <action selector="passwordChanged:" destination="u8Q-Vz-V1i" eventType="editingChanged" id="Gms-Lt-a5X"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
@@ -228,7 +228,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="passwordAgainChanged:" destination="u8Q-Vz-V1i" eventType="editingDidEnd" id="hhh-0t-awB"/>
+                                                    <action selector="passwordAgainChanged:" destination="u8Q-Vz-V1i" eventType="editingChanged" id="SaA-Au-SHB"/>
                                                 </connections>
                                             </textField>
                                         </subviews>

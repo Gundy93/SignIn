@@ -9,7 +9,6 @@ import UIKit
 
 final class SignInViewController: UIViewController {
     
-    
     @IBAction func close(_ sender: Any) {
         dismiss(animated: true)
     }
