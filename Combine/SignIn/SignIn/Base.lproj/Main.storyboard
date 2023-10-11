@@ -243,6 +243,9 @@
                                         <rect key="frame" x="0.0" y="193" width="353" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="계정 생성"/>
+                                        <connections>
+                                            <action selector="createAccount:" destination="u8Q-Vz-V1i" eventType="touchUpInside" id="wwb-e3-2Nf"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNr-A2-Qlr">
                                         <rect key="frame" x="0.0" y="235.33333333333331" width="353" height="34.333333333333314"/>

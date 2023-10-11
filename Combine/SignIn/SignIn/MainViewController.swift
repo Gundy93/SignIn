@@ -15,59 +15,40 @@ final class MainViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordCautionLabel: UILabel!
     @IBOutlet weak var signInButton: UIButton!
-    private var accountManager: AccountManager = AccountManager()
     @Published private var identifier: String = String()
-    private var validateIdentifier: AnyPublisher<String?, Never> {
-        return $identifier
-            .map { self.accountManager.validateIdentifier($0) || $0.isEmpty ? $0 : nil }
-            .eraseToAnyPublisher()
-    }
-    private var identifierCancellable: AnyCancellable?
     @Published private var password: String = String()
-    private var validatePassword: AnyPublisher<Bool, Never> {
-        return $identifier
-            .combineLatest($password) { identifier, password in
-                return self.accountManager.validateAccount(identifier: identifier,
-                                                           password: password) || password.isEmpty
-            }
-            .eraseToAnyPublisher()
-    }
-    private var passwordCancellable: AnyCancellable?
-    private var validateAccount: AnyPublisher<Bool, Never> {
-        return $identifier
-            .combineLatest($password) { identifier, password in
-                return self.accountManager.validateAccount(identifier: identifier,
-                                                           password: password)
-            }
-            .eraseToAnyPublisher()
-    }
-    private var signInButtonCancellable: AnyCancellable?
+    private var cancellables: Set<AnyCancellable> = []
+    private var accountManager: AccountManager = AccountManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureCancellable()
+        bind()
     }
     
-    private func configureCancellable() {
-        identifierCancellable = validateIdentifier.sink { identifier in
-            guard identifier != nil else {
-                self.identifierCautionLabel.textColor = .systemRed
-                return
+    private func bind() {
+        let validateIdentifier = $identifier
+            .map { (self.accountManager.validateIdentifier($0), $0) }
+            .eraseToAnyPublisher()
+        
+        validateIdentifier.sink { (validation, identifier) in
+            self.identifierCautionLabel.textColor = self.textColor(validation: validation || identifier.isEmpty)
+        }.store(in: &cancellables)
+        let validatePassword = $identifier
+            .combineLatest($password) { identifier, password in
+                (self.accountManager.validateAccount(identifier: identifier,
+                                                     password: password), password)
             }
+            .eraseToAnyPublisher()
             
-            self.identifierCautionLabel.textColor = .clear
-        }
-        passwordCancellable = validatePassword.sink { validation in
-            guard validation else {
-                self.passwordCautionLabel.textColor = .systemRed
-                return
-            }
-            
-            self.passwordCautionLabel.textColor = .clear
-        }
-        signInButtonCancellable = validateAccount.assign(to: \.isEnabled,
-                                                         on: signInButton)
+        validatePassword
+            .sink { (validation, password) in
+            self.passwordCautionLabel.textColor = self.textColor(validation: validation || password.isEmpty)
+        }.store(in: &cancellables)
+        
+        validatePassword.sink{ (validation, _) in
+            self.signInButton.isEnabled = validation
+        }.store(in: &cancellables)
     }
     
     @IBAction func identifierChanged(_ sender: UITextField) {
@@ -80,5 +61,9 @@ final class MainViewController: UIViewController {
         guard let password = sender.text else { return }
         
         self.password = password
+    }
+    
+    private func textColor(validation: Bool) -> UIColor {
+        return validation ? .clear : .systemRed
     }
 }
