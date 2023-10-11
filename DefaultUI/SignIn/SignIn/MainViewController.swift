@@ -14,4 +14,10 @@ final class MainViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordCautionLabel: UILabel!
     @IBOutlet weak var signInButton: UIButton!
+    
+    @IBAction func identifierChanged(_ sender: UITextField) {
+    }
+    
+    @IBAction func passwordChanged(_ sender: UITextField) {
+    }
 }

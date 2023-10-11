@@ -20,4 +20,13 @@ final class SingUpViewController: UIViewController {
     @IBAction func close(_ sender: Any) {
         dismiss(animated: true)
     }
+    
+    @IBAction func identifierChanged(_ sender: UITextField) {
+    }
+    
+    @IBAction func passwordChanged(_ sender: UITextField) {
+    }
+    
+    @IBAction func passwordAgainChanged(_ sender: UITextField) {
+    }
 }
